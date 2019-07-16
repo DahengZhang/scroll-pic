@@ -1,28 +1,39 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div class="app">
+    <goods-pic-preview :pics="pics" class="pic-preview-el"></goods-pic-preview>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import GoodsPicPreview from './components/goods-pic-preview'
 
 export default {
   name: 'app',
+  data() {
+    return {
+      pics: [
+        'https://pic3.zhimg.com/80/v2-cf1350583d4f89fd39a9f12390ce7dbb_hd.jpg',
+        'https://pic2.zhimg.com/80/v2-ce00fd1e6e520913b52211dc21dd58d8_hd.jpg',
+        'https://pic1.zhimg.com/80/v2-26f8abd7baf10854363503f495af8f24_hd.jpg',
+        'https://pic1.zhimg.com/80/v2-56b6848db0d6fa5a992d68cc072dc725_hd.jpg',
+        'https://pic2.zhimg.com/80/v2-b2e0594ab40bacb7a59518c3f7406d94_hd.jpg'
+      ]
+    }
+  },
   components: {
-    HelloWorld
+    GoodsPicPreview
   }
 }
 </script>
 
 <style lang="less">
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+body {
+  margin: 0;
+}
+.app {
+  .pic-preview-el {
+    background-color: rgba(0, 0, 0, .2);
+    width: 350px;
+  }
 }
 </style>
